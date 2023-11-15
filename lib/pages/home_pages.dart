@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hamidhan_14/pages/persegi%20page.dart';
 
 class Homepage extends StatelessWidget {
   const Homepage({super.key});
@@ -12,10 +13,20 @@ class Homepage extends StatelessWidget {
             "Home Page",
             style: TextStyle(color: Colors.white),
           )),
-      body: Column(
+      body: ListView(
         children: [
-          coustemmenu(imageAssets: "asset/belah2.png", title: "persegi"),
-          coustemmenu(imageAssets: "asset/lingkaran.png", title: "persegi"),
+          InkWell(
+            onTap: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context) => PersegiPage()));
+    },
+              child:coustemmenu(imageAssets: "asset/belah2.png", title: "jajar genjang")),
+          Row(
+            children: [
+              Expanded(child: coustemmenu(imageAssets: "asset/lingkaran.png", title: "lingkaran")),
+              Expanded(child: coustemmenu(imageAssets: "asset/lingkaran.png", title: "lingkaran")),
+              Expanded(child: coustemmenu(imageAssets: "asset/lingkaran.png", title: "lingkaran")),
+            ],
+          ),
         ],
       ),
     );
